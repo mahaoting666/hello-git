@@ -1,0 +1,125 @@
+#include <iostream>
+using namespace std;
+/*
+1.// 链表定义
+// 基础版
+struct Node{
+    int data;
+    Node* next;
+};
+
+int main()
+{ 
+    // 创建节点
+Node* head = new Node;
+// 赋值
+
+head->data = 10;
+head->next = NULL;
+}
+*/
+
+/*
+2.
+// 带构造的函数方法（最推荐）
+struct Node
+{
+    int data;
+    Node* next;
+
+    Node(int x)
+    {
+        data = x;
+        next = NULL;
+    }
+};
+// 创建节点
+Node* newNode = new Node(10);
+*/
+
+
+/*
+3.
+// class写法 （面向对象）
+class Node
+{
+public:
+    int data;
+    Node* next;
+
+    Node(int x)
+    {
+        data = x;
+        next = NULL;
+    }
+
+};
+// 区别 struct 默认 public class 默认 private
+*/
+
+
+/*
+4.
+// 构造函数初始化列表 （高级推荐）
+// 现代c++ 推荐
+struct Node
+{
+    int data;
+    Node* next;
+
+    Node(int x)
+        : data(x),next(nullptr){}
+};
+// 特点 更高效 更专业 面试喜欢
+*/
+
+/*
+5.
+// 双链表 节点定义
+struct Node
+{
+    int data;
+    Node* next;
+    Node* prev;
+
+    Node(int x)
+    :data(x), prev(nullptr),next(nullptr){}
+};
+// prev<- 当前节点 -> next
+*/
+
+/*
+6.
+// 循环节点
+struct Node
+{
+    int data;
+    Node* next;
+};
+// 节点定义一样 关键在于 tail->next = head;
+*/
+
+
+
+/*
+
+// 模板泛型节点 （极其重要）
+
+template<typename T>
+struct Node
+{
+    T data;
+    Node* next;
+
+    Node(T x)
+        :data(x),next(nullptr){}
+};
+*/
+
+// 头节点写法（重点）
+// 有些链表会专门设置头节点(dummy head)
+// head-> [空节点] -> 真正数据
+// Node* dummy = new Node(0);
+// 用途 简化删除操作 简化便捷判断
+//leetcode 高频
+
